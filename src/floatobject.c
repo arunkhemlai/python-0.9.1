@@ -38,8 +38,8 @@ extern int errno;
 #include <math.h>
 
 #ifndef THINK_C
-extern double fmod PROTO((double, double));
-extern double pow PROTO((double, double));
+extern double fmod (double, double);
+extern double pow (double, double);
 #endif
 
 object *

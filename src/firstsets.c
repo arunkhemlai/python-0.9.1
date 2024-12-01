@@ -31,7 +31,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 extern int debugging;
 
 /* Forward */
-static void calcfirstset PROTO((grammar *, dfa *));
+static void calcfirstset (grammar *, dfa *);
 
 void
 addfirstsets(g)

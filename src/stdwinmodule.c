@@ -276,7 +276,7 @@ static object *
 drawing_generic(dp, args, func)
 	drawingobject *dp;
 	object *args;
-	void (*func) FPROTO((int, int, int, int));
+	void (*func) (int, int, int, int);
 {
 	int a[4];
 	if (!getrectarg(args, a))

@@ -46,9 +46,9 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #endif
 
 /* Forward */
-static struct tok_state *tok_new PROTO((void));
-static int tok_nextc PROTO((struct tok_state *tok));
-static void tok_backup PROTO((struct tok_state *tok, int c));
+static struct tok_state *tok_new (void);
+static int tok_nextc (struct tok_state *tok);
+static void tok_backup (struct tok_state *tok, int c);
 
 /* Token names */
 
@@ -193,7 +193,7 @@ tok_nextc(tok)
 		}
 #ifdef USE_READLINE
 		if (tok->prompt != NULL) {
-			extern char *readline PROTO((char *prompt));
+			extern char *readline (char *prompt);
 			static int been_here;
 			if (!been_here) {
 				/* Force rebind of TAB to insert-tab */

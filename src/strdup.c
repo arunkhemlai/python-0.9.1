@@ -22,7 +22,6 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ******************************************************************/
 
-#include "PROTO.h"
 #include "malloc.h"
 #include "string.h"
 

@@ -60,5 +60,5 @@ struct memberlist {
 #define READONLY	1
 #define RO		READONLY		/* Shorthand */
 
-object *getmember PROTO((char *, struct memberlist *, char *));
-int setmember PROTO((char *, struct memberlist *, char *, object *));
+object *getmember (char *, struct memberlist *, char *);
+int setmember (char *, struct memberlist *, char *, object *);

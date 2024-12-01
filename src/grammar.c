@@ -151,7 +151,7 @@ findlabel(ll, type, str)
 }
 
 /* Forward */
-static void translabel PROTO((grammar *, label *));
+static void translabel (grammar *, label *);
 
 void
 translatelabels(g)

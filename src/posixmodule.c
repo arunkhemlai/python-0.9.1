@@ -40,7 +40,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "allobjects.h"
 #include "modsupport.h"
 
-extern char *strerror PROTO((int));
+extern char *strerror (int);
 
 #ifdef AMOEBA
 #define NO_LSTAT
@@ -95,7 +95,7 @@ posix_error()
 static object *
 posix_1str(args, func)
 	object *args;
-	int (*func) FPROTO((const char *));
+	int (*func) (const char *);
 {
 	object *path1;
 	if (!getstrarg(args, &path1))
@@ -109,7 +109,7 @@ posix_1str(args, func)
 static object *
 posix_2str(args, func)
 	object *args;
-	int (*func) FPROTO((const char *, const char *));
+	int (*func) (const char *, const char *);
 {
 	object *path1, *path2;
 	if (!getstrstrarg(args, &path1, &path2))
@@ -123,7 +123,7 @@ posix_2str(args, func)
 static object *
 posix_strint(args, func)
 	object *args;
-	int (*func) FPROTO((const char *, int));
+	int (*func) (const char *, int);
 {
 	object *path1;
 	int i;
@@ -139,7 +139,7 @@ static object *
 posix_do_stat(self, args, statfunc)
 	object *self;
 	object *args;
-	int (*statfunc) FPROTO((const char *, struct stat *));
+	int (*statfunc) (const char *, struct stat *);
 {
 	struct stat st;
 	object *path;
@@ -178,7 +178,7 @@ posix_chdir(self, args)
 	object *self;
 	object *args;
 {
-	extern int chdir PROTO((const char *));
+	extern int chdir (const char *);
 	return posix_1str(args, chdir);
 }
 
@@ -187,7 +187,7 @@ posix_chmod(self, args)
 	object *self;
 	object *args;
 {
-	extern int chmod PROTO((const char *, mode_t));
+	extern int chmod (const char *, mode_t);
 	return posix_strint(args, chmod);
 }
 
@@ -197,7 +197,7 @@ posix_getcwd(self, args)
 	object *args;
 {
 	char buf[1026];
-	extern char *getcwd PROTO((char *, int));
+	extern char *getcwd (char *, int);
 	if (!getnoarg(args))
 		return NULL;
 	if (getcwd(buf, sizeof buf) == NULL)
@@ -210,7 +210,7 @@ posix_link(self, args)
 	object *self;
 	object *args;
 {
-	extern int link PROTO((const char *, const char *));
+	extern int link (const char *, const char *);
 	return posix_2str(args, link);
 }
 
@@ -254,7 +254,7 @@ posix_mkdir(self, args)
 	object *self;
 	object *args;
 {
-	extern int mkdir PROTO((const char *, mode_t));
+	extern int mkdir (const char *, mode_t);
 	return posix_strint(args, mkdir);
 }
 
@@ -263,7 +263,7 @@ posix_rename(self, args)
 	object *self;
 	object *args;
 {
-	extern int rename PROTO((const char *, const char *));
+	extern int rename (const char *, const char *);
 	return posix_2str(args, rename);
 }
 
@@ -272,7 +272,7 @@ posix_rmdir(self, args)
 	object *self;
 	object *args;
 {
-	extern int rmdir PROTO((const char *));
+	extern int rmdir (const char *);
 	return posix_1str(args, rmdir);
 }
 
@@ -281,7 +281,7 @@ posix_stat(self, args)
 	object *self;
 	object *args;
 {
-	extern int stat PROTO((const char *, struct stat *));
+	extern int stat (const char *, struct stat *);
 	return posix_do_stat(self, args, stat);
 }
 
@@ -317,7 +317,7 @@ posix_unlink(self, args)
 	object *self;
 	object *args;
 {
-	extern int unlink PROTO((const char *));
+	extern int unlink (const char *);
 	return posix_1str(args, unlink);
 }
 
@@ -351,7 +351,7 @@ posix_lstat(self, args)
 	object *self;
 	object *args;
 {
-	extern int lstat PROTO((const char *, struct stat *));
+	extern int lstat (const char *, struct stat *);
 	return posix_do_stat(self, args, lstat);
 }
 
@@ -376,7 +376,7 @@ posix_symlink(self, args)
 	object *self;
 	object *args;
 {
-	extern int symlink PROTO((const char *, const char *));
+	extern int symlink (const char *, const char *);
 	return posix_2str(args, symlink);
 }
 

@@ -41,10 +41,10 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 int debugging;
 
 /* Forward */
-grammar *getgrammar PROTO((char *filename));
+grammar *getgrammar (char *filename);
 #ifdef THINK_C
-int main PROTO((int, char **));
-char *askfile PROTO((void));
+int main (int, char **);
+char *askfile (void);
 #endif
 
 int

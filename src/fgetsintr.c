@@ -44,7 +44,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 static jmp_buf jback;
 
-static void catcher PROTO((int));
+static void catcher (int);
 
 static void
 catcher(sig)

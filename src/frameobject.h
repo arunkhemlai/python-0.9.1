@@ -50,8 +50,7 @@ extern typeobject Frametype;
 
 #define is_frameobject(op) ((op)->ob_type == &Frametype)
 
-frameobject * newframeobject PROTO(
-	(frameobject *, codeobject *, object *, object *, int, int));
+frameobject * newframeobject (frameobject *, codeobject *, object *, object *, int, int);
 
 
 /* The rest of the interface is specific for frame objects */
@@ -76,5 +75,5 @@ frameobject * newframeobject PROTO(
 
 /* Block management functions */
 
-void setup_block PROTO((frameobject *, int, int, int));
-block *pop_block PROTO((frameobject *));
+void setup_block (frameobject *, int, int, int);
+block *pop_block (frameobject *);

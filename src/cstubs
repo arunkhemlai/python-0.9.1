@@ -61,7 +61,7 @@ gl_varray(self, args)
 	object *v, *w;
 	int i, n, width;
 	double vec[3];
-	object * (*getitem) FPROTO((object *, int));
+	object * (*getitem) (object *, int);
 	
 	if (!getiobjectarg(args, 1, 0, &v))
 		return NULL;
@@ -164,7 +164,7 @@ gen_nvarray(args, inorm)
 	object *v, *w, *wnorm, *wvec;
 	int i, n;
 	float norm[3], vec[3];
-	object * (*getitem) FPROTO((object *, int));
+	object * (*getitem) (object *, int);
 	
 	if (!getiobjectarg(args, 1, 0, &v))
 		return NULL;

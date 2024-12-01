@@ -67,7 +67,7 @@ get2doublearg(args, px, py)
 static object *
 math_1(args, func)
 	object *args;
-	double (*func) FPROTO((double));
+	double (*func) (double);
 {
 	double x;
 	if (!getdoublearg(args, &x))
@@ -83,7 +83,7 @@ math_1(args, func)
 static object *
 math_2(args, func)
 	object *args;
-	double (*func) FPROTO((double, double));
+	double (*func) (double, double);
 {
 	double x, y;
 	if (!get2doublearg(args, &x, &y))

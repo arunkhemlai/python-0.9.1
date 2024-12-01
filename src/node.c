@@ -73,7 +73,7 @@ addchild(n1, type, str, lineno)
 }
 
 /* Forward */
-static void freechildren PROTO((node *));
+static void freechildren (node *);
 
 
 void

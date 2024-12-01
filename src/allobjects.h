@@ -28,7 +28,6 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include <string.h>
 #include <stdlib.h>
 
-#include "PROTO.h"
 
 #include "object.h"
 #include "objimpl.h"
@@ -48,4 +47,4 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "errors.h"
 #include "malloc.h"
 
-extern char *strdup PROTO((const char *));
+extern char *strdup (const char *);

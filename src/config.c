@@ -61,9 +61,6 @@ donecalls()
 	if (use_stdwin)
 		wdone();
 #endif
-#ifdef USE_AUDIO
-	asa_done();
-#endif
 }
 
 #ifdef USE_STDWIN
@@ -102,9 +99,6 @@ extern void inittime();
 extern void initmath();
 extern void initregexp();
 extern void initposix();
-#ifdef USE_AUDIO
-extern void initaudio();
-#endif
 #ifdef USE_AMOEBA
 extern void initamoeba();
 #endif
@@ -132,10 +126,6 @@ struct {
 
 
 	/* Optional modules */
-
-#ifdef USE_AUDIO
-	{"audio",	initaudio},
-#endif
 
 #ifdef USE_AMOEBA
 	{"amoeba",	initamoeba},

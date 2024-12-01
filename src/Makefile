@@ -297,22 +297,6 @@ DEFPYTHONPATH= .:/usr/local/lib/python:/ufs/guido/lib/python:../lib
 #PANEL_OBJ=	panelmodule.o
 
 
-# Audio Option
-# ============
-#
-# This option lets you play with /dev/audio on the IRIS 4D/25.
-# It incorporates the built-in module 'audio'.
-# Warning: using the asynchronous I/O facilities of this module can
-# create a second 'thread', which looks in the listings of 'ps' like a
-# forked child.  However, it shares its address space with the parent.
-#
-# Uncomment the following block to use the Audio option.
-
-#AUDIO_USE=	-DUSE_AUDIO
-#AUDIO_SRC=	audiomodule.c asa.c
-#AUDIO_OBJ=	audiomodule.o asa.o
-
-
 # Major Definitions
 # =================
 
@@ -344,7 +328,7 @@ STANDARD_SRC=	acceler.c bltinmodule.c ceval.c classobject.c \
 		sysmodule.c timemodule.c tokenizer.c traceback.c \
 		tupleobject.c typeobject.c
 
-CONFIGDEFS=	$(STDW_USE) $(AM_USE) $(AUDIO_USE) $(GL_USE) $(PANEL_USE) \
+CONFIGDEFS=	$(STDW_USE) $(AM_USE) $(GL_USE) $(PANEL_USE) \
 		'-DPYTHONPATH="$(DEFPYTHONPATH)"'
 
 CONFIGINCLS=	$(STDW_INCL)
@@ -356,10 +340,10 @@ LIBDEPS=	libpython.a $(STDW_LIBDEPS) $(AM_LIBDEPS) \
 LIBS=		libpython.a $(STDW_LIBS) $(AM_LIBS) \
 		$(PANEL_LIBS) $(GL_LIBS) $(RL_LIBS) -lm
 
-LIBOBJECTS=	$(STANDARD_OBJ) $(STDW_OBJ) $(AM_OBJ) $(AUDIO_OBJ) \
+LIBOBJECTS=	$(STANDARD_OBJ) $(STDW_OBJ) $(AM_OBJ) \
 		$(GL_OBJ) $(PANEL_OBJ)
 
-LIBSOURCES=	$(STANDARD_SRC) $(STDW_SRC) $(AM_SRC) $(AUDIO_SRC) \
+LIBSOURCES=	$(STANDARD_SRC) $(STDW_SRC) $(AM_SRC) \
 		$(GL_SRC) $(PANEL_SRC)
 
 OBJECTS=	pythonmain.o config.o
